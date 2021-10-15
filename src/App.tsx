@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Todolist} from './Todolist';
+import {Todolist, TaskType} from './Todolist';
 import {v1} from 'uuid';
-import set = Reflect.set;
 
 export type FilterValuesType = "all" | "active" | "completed";
+
+export type TasksType = {[key: string] : Array<TaskType>}
 
 export type todolistsType = {
     id: string
@@ -39,8 +40,9 @@ function App() {
         ]
     });
 
-
-
+    const removeTodolist = (todolistsID: string) => {
+        setTodolists(todolists.filter( f => f.id !== todolistsID ))
+    }
 
     function removeTask(todolistID: string, id: string) {
         setTasks({...tasks, [todolistID] : tasks[todolistID].filter( f => f.id !== id)})
@@ -58,7 +60,7 @@ function App() {
     }
 
     function changeStatus(todolistID: string, taskId: string, isDone: boolean) {
-        setTasks({...tasks, [todolistID] : tasks[todolistID].map( t => t.id === taskId ? {...t, isDone: isDone} : t)})
+        setTasks({...tasks, [todolistID] : tasks[todolistID].map( m => m.id === taskId ? {...m, isDone: isDone} : m)})
 
         // setTasks({...tasks, [todolistID] : tasks[todolistID].map( m => m.id === taskId ? {...m, isDone: isDone} : m )})
 
@@ -105,6 +107,7 @@ function App() {
                         addTask={addTask}
                         changeTaskStatus={changeStatus}
                         filter={l.filter}
+                        removeTodolist={removeTodolist}
                     />
                 )
             })}
