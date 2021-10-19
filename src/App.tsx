@@ -5,6 +5,12 @@ import {v1} from 'uuid';
 
 export type FilterValuesType = "all" | "active" | "completed";
 
+export type todolistsType = {
+    id: string
+    title: string
+    filter: FilterValuesType
+}
+
 function App() {
 
 
@@ -41,16 +47,40 @@ function App() {
         setTasks([...tasks]);
     }
 
+    function changeFilter(todolistId: string, value: FilterValuesType) {
+        setTodolists(todolists.map(m => m.id === todolistId ? {...m, filter: value} : m))
+    }
+
     return (
         <div className="App">
-            <Todolist title="What to learn"
-                      tasks={tasks}
-                      removeTask={removeTask}
-                      // changeFilter={changeFilter}
-                      addTask={addTask}
-                      changeTaskStatus={changeStatus}
-                      // filter={filter}
-            />
+
+            {todolists.map(m => {
+
+                let tasksForTodolist = tasks;
+
+                if (m.filter === "active") {
+                    tasksForTodolist = tasks.filter(t => t.isDone === false);
+                }
+                if (m.filter === "completed") {
+                    tasksForTodolist = tasks.filter(t => t.isDone === true);
+                }
+
+                return (
+                    <Todolist
+                        key={m.id}
+                        todolistId={m.id}
+                        title={m.title}
+                        tasks={tasks}
+                        removeTask={removeTask}
+                        changeFilter={changeFilter}
+                        addTask={addTask}
+                        changeTaskStatus={changeStatus}
+                        filter={m.filter}
+                    />
+                )
+            })}
+
+
         </div>
     );
 }
