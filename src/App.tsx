@@ -16,6 +16,10 @@ function App() {
         {id: v1(), title: "GraphQL", isDone: false},
     ]);
 
+    let [todolists, setTodolists] = useState<Array<todolistsType>>([
+        {id: v1(), title: 'What to learn', filter: 'all'},
+        {id: v1(), title: 'What to buy', filter: 'all'},
+    ])
 
     function removeTask(id: string) {
         let filteredTasks = tasks.filter(t => t.id != id);
