@@ -1,7 +1,6 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import Button from "./components/Button";
-import InputWithButton from "./components/InputWithButton";
 import Input from "./components/Input";
 
 export type TaskType = {
@@ -29,22 +28,14 @@ export function Todolist({tasks, removeTask, ...props}: PropsType) {
 
 
     const addTaskHandlerForAddTitle = () => {
-        if (title.trim() !== "") {
+        // if (title.trim() !== "") {
+        if (title) {
             props.addTask(props.todolistId, title)
             setTitle("")
         } else {
-            // setError("Title is required")
+            setError("Title is required")
         }
     }
-
-    // const addTask = () => {
-    //     if (title.trim() !== "") {
-    //         props.addTask(props.todolistId, title.trim())
-    //         setTitle("")
-    //     } else {
-    //         setError("Title is required")
-    //     }
-    // }
 
     const tsarFoo = (value: FilterValuesType) => {
         props.changeFilter(props.todolistId, value)
@@ -69,7 +60,12 @@ props.addTask(props.todolistId, title)
 
         <div>
 
-            <Input title={title} setTitle={setTitle} addTask={addTaskHandlerForEnter} />
+            <Input title={title}
+                   setTitle={setTitle}
+                   addTask={addTaskHandlerForEnter}
+                   error={error}
+                   setError={setError}
+            />
 
             <Button callBack={addTaskHandlerForAddTitle} name={'+'} />
 

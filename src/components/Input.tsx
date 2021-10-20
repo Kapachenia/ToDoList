@@ -1,9 +1,13 @@
 import React, {ChangeEvent, KeyboardEvent} from 'react';
+import './../App.css';
+
 
 export type propsType = {
     title: string
     setTitle: (title: string) => void
     addTask: () => void
+    error: any
+    setError: any
 }
 
 const Input = (props: propsType) => {
@@ -13,10 +17,12 @@ const Input = (props: propsType) => {
     }
 
     const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        // setError(null);
-        if (e.charCode === 13) {
-            props.addTask();
-            props.setTitle("")
+        props.setError(null);
+        if (e.charCode === 13 ) {
+            if (props.title) {
+                props.addTask();
+                props.setTitle("")
+            } else props.setError("Title is required")
         }
     }
 
@@ -25,8 +31,9 @@ const Input = (props: propsType) => {
             <input value={props.title}
                    onChange={onChangeHandler}
                    onKeyPress={onKeyPressHandler}
-                // className={error ? "error" : ""}
+                   className={props.error ? "error" : ""}
             />
+            <div className={"errorMessage"}>{props.error}</div>
         </div>
     );
 };
