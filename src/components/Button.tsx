@@ -3,6 +3,7 @@ import React from "react";
 type propsType = {
     callBack: () => void
     name: string
+    filter?: string
 }
 
 const Button = (props: propsType) => {
@@ -12,7 +13,10 @@ const Button = (props: propsType) => {
     }
 
     return (
-        <button onClick={onClickHandler}>{props.name}</button>
+        <button className={props.filter === props.name ? "activeFilter" : ""}
+                onClick={onClickHandler}>
+            {props.name}
+        </button>
     )
 }
 
