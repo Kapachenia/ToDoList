@@ -1,0 +1,65 @@
+[33mcommit 6ad19d4a42e088a039ec60e211c93354f344f84a[m[33m ([m[1;36mHEAD -> [m[1;32m05_start[m[33m, [m[1;31morigin/05_start[m[33m)[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Wed Oct 20 15:25:46 2021 +0300
+
+    fix error, setError
+
+[33mcommit 2d625bd230bf7ea187e0b458f357fc99a303bfbe[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Wed Oct 20 13:46:25 2021 +0300
+
+    add component Input, Button
+
+[33mcommit 73b89a40e840091688b90a66fbad807956d2e5de[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Tue Oct 19 17:18:56 2021 +0300
+
+    add Button component
+
+[33mcommit 152484812690f8af0eef9ffd83d02b24ba7b43d2[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Tue Oct 19 16:04:56 2021 +0300
+
+    fix setTasks
+
+[33mcommit 3f5829b838e66e522937854fb889884a1ab90867[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Tue Oct 19 14:56:31 2021 +0300
+
+    05.02_start
+
+[33mcommit 3a78a5d7dc807008808a9345d5ede22a7726ec30[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Tue Oct 19 14:55:11 2021 +0300
+
+    Associative array
+
+[33mcommit 196fd5a4127cd88f06c995517884b84b437470aa[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Tue Oct 19 14:50:50 2021 +0300
+
+    fix changeFilter
+
+[33mcommit 4fb81f596660eaccb95b523f7ffbcd0e9bfaa96b[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Tue Oct 19 12:39:20 2021 +0300
+
+    05.01_start
+
+[33mcommit 791e66a26875e1fd8371e04900c1418f3b9b7bbe[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Tue Oct 19 12:29:21 2021 +0300
+
+    Transferring the filter to todolist
+
+[33mcommit 9b3dfdd494db0eb36d42ec6381d1c65c36b7c059[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Tue Oct 19 11:43:36 2021 +0300
+
+    05_start
+
+[33mcommit 72af5d1a96f3da5f9cf8bd944a2918875d406b88[m
+Author: Yauheni Kapachenia <kapachenia@gmail.com>
+Date:   Wed Oct 13 12:04:46 2021 +0300
+
+    Add a second task sheet
