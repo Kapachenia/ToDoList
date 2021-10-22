@@ -59,7 +59,7 @@ export function Todolist(props: PropsType) {
                    className={error ? "error" : ""}
             />
             <button onClick={addTask}>+</button>
-            {error && <div className="error-message">{error}</div>}
+            {error && <div className="errorMessage">{error}</div>}
         </div>
         <ul>
             {
@@ -80,11 +80,11 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
-            <button className={props.filter === 'all' ? "active-filter" : ""}
+            <button className={props.filter === 'all' ? "activeFilter" : ""}
                     onClick={onAllClickHandler}>All</button>
-            <button className={props.filter === 'active' ? "active-filter" : ""}
+            <button className={props.filter === 'active' ? "activeFilter" : ""}
                     onClick={onActiveClickHandler}>Active</button>
-            <button className={props.filter === 'completed' ? "active-filter" : ""}
+            <button className={props.filter === 'completed' ? "activeFilter" : ""}
                     onClick={onCompletedClickHandler}>Completed</button>
         </div>
     </div>
