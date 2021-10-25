@@ -19,7 +19,6 @@ const InputWithButton = (props: propsType) => {
     }
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.currentTarget.value)
         setTitle(e.currentTarget.value)
     }
 
